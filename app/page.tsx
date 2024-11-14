@@ -7,6 +7,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { ArrowRight, Download, Upload } from 'lucide-react'
+import logo from "../public/images/logo.png"
+import example from "../public/images/example.png"
 
 export default function BackgroundRemover() {
   const [originalImage, setOriginalImage] = useState<string | null>(null)
@@ -18,7 +20,7 @@ export default function BackgroundRemover() {
     const file = e.target.files?.[0]
     if (file) {
       const reader = new FileReader()
-      reader.onload = (e) => setOriginalImage(e.target?.result as string)
+      reader.onload = (e) => setOriginalImage(e.target?.result as string)  
       reader.readAsDataURL(file)
     }
   }
@@ -72,7 +74,7 @@ export default function BackgroundRemover() {
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-4">
-            <Image src="/placeholder.svg" alt="Logo" width={32} height={32} />
+            <Image src={logo} alt="Logo" width={32} height={32} />
             <nav>
               <ul className="flex space-x-4">
                 <li><a href="#" className="text-gray-500 hover:text-gray-900">Tools</a></li>
@@ -198,7 +200,7 @@ export default function BackgroundRemover() {
               <p>With our advanced algorithms, you can achieve professional-looking results without any manual editing. Simply upload your image, and let our AI do the rest. It's perfect for e-commerce product photos, professional headshots, or creative photo editing.</p>
             </div>
             <div className="flex items-center justify-center">
-              <Image src="/placeholder.svg" alt="Example" width={300} height={300} className="rounded-lg" />
+              <Image src={example} alt="Example-bg" width={400} height={400} className="rounded-lg" />
             </div>
           </div>
         </div>
